@@ -1,0 +1,37 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+Entity RiconoscitoreCodice is
+PORT ( SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		clockl	: IN STD_LOGIC  := '1';
+		LEDG : OUT STD_LOGIC_VECTOR(0 TO 9));
+		End RiconoscitoreCodice;
+		
+	
+Architecture A1 of RiconoscitoreCodice is
+Component primo 
+Port (
+		SW1 : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		clockl1	: IN STD_LOGIC  := '1';
+		SW2 : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+		clockl2	: OUT STD_LOGIC  := '1';
+		add: OUT STD_LOGIC_VECTOR (0 DOWNTO 0);
+);
+end component;
+Component secondo
+Port (
+		SW3 : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		code: IN STD_LOGIC_VECTOR(8 downto 0);
+		LEDG : OUT STD_LOGIC_VECTOR(0 TO 9)
+);	
+end component;
+Component ROMSIM
+Port (
+		address		: IN STD_LOGIC_VECTOR (0 DOWNTO 0);
+		clock		: IN STD_LOGIC  := '1';
+		q		: OUT STD_LOGIC_VECTOR (8 DOWNTO 0)
+
+);
+end component;
+Begin 
+End A1;
